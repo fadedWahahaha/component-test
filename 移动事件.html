@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: saddlebrown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		var box=document.getElementById('box');
+		box.onclick=function(){
+			console.log("...");
+		}
+		
+		
+		// 移动端的touch事件
+		// 1.touchstart 手指按下的时候触发
+		box.addEventListener('touchstart',function(){
+			createP('手指按下');
+			console.log('手指按下！');
+		})
+		
+		// 2.touchend 手指离开的时候触发
+		box.addEventListener('touchend',function(){
+			createP('手指离开');
+			console.log('手指离开！');
+		})
+		
+		// 3.touchmove 手指移动的时候触发
+		box.addEventListener('touchmove',function(){
+			createP('手指移动');
+			console.log('手指移动！');
+		})
+		
+		// 4.touchcancel 打断的时候触发，如接电话
+		box.addEventListener('touchcancel',function(){
+			createP('打断');
+			console.log('打断！');
+		})
+		
+		// 创建p元素并且添加到box中的函数
+		function createP(){
+			var p=document.createElement('p');
+			p.innerHTML=pValue;
+			p.appendChild('box');
+		}
+	</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background-color: saddlebrown;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript" src="touch.js" ></script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		$('#box').swiperLeft(function(){
+			console.log('点点点');
+		});
+	</script>
+</html>

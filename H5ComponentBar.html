@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--引入柱图资源-->
+		<link rel="stylesheet" type="text/css" href="H5ComponentBar.css"/>
+		<link rel="stylesheet" type="text/css" href="H5ComponentBase.css"/>
+		<script type="text/javascript" src="H5ComponentBar.js" ></script>
+		<script type="text/javascript" src="H5ComponentBase.js" ></script>
+		<script type="text/javascript" src="jquery-2.1.3.js" ></script>
+		<script type="text/javascript" src="jquery-ui.min.js" ></script>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				background-color:steelblue;
+				font: normal 12px "微软雅黑";
+			}
+			.iphone{
+				background-color:snow;
+				width: 340px;
+				height: 540px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin: -270px 0 0 -170px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="iphone"></div>
+	</body>
+	
+	<script type="text/javascript">
+		
+		var cfg={
+			type:'bar',
+			
+			width:530,
+			height:600,
+			data:[
+				['A项目',.4,'green'],
+				['B项目',.35,'black'],
+				['C项目',.2],
+				['D项目',.09],
+				['E项目',.17],
+				['F项目',.13]
+			],
+			css:{
+				top:100,
+				opacity:0
+			},
+			animateIn:{opacity:1,top:100},
+			animateOut:{opacity:0,top:200},
+			center:true,
+			
+		}
+		
+		var h5=new H5ComponentBar('myBarComponent',cfg);
+		$('.iphone').append(h5);
+		
+		// 设置点击触发trigger
+		var leave=true;
+		$('body').click(function(){
+			leave=!leave;
+			$('.h5_component').trigger(leave?'onLeave':'onLoad')
+		})
+		
+		
+	</script>
+	
+</html>
